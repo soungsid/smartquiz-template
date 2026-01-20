@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Brain, Menu, X, Sparkles } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -53,6 +54,7 @@ export function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
               Log in
             </Button>
@@ -110,6 +112,10 @@ export function Navigation() {
                 Pricing
               </Link>
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
+                <div className="flex items-center justify-between py-2">
+                  <span className="text-muted-foreground font-medium">Theme</span>
+                  <ThemeToggle />
+                </div>
                 <Button variant="ghost" className="justify-start text-muted-foreground">
                   Log in
                 </Button>
